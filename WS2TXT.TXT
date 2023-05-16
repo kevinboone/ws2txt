@@ -1,0 +1,28 @@
+ws2txt
+------
+
+A rudimentary utility for converting WordStar (v4 and earlier) files to plain
+ASCII text, or viewing them on screen. 
+
+WordStar version 5 and later saves files that are almost human-readable -- at
+least when only ASCII characters are used. Version 4 and earlier use the high
+bit of some bytes in the document to carry formatting hints. It is these
+spurious high bits that make WS documents difficult to read as plain text.
+
+Usage
+-----
+
+ws2txt [/v] [/h] [/p] [/o text_file] {wordstar_file}
+
+The switches are case-insensitive (which is unavoidable on CP/M), and you can
+use `-` rather than `/` if preferred. 
+
+If no `/o` (output) switch is given, output is to standard out. 
+
+The `/p` switch specifies that output is to written a page (screen) at a time,
+with a prompt to display the next line or page. This switch has no effect if
+output is to a file.
+
+`/h` shows the help message; `\v` shows the version. 
+
+

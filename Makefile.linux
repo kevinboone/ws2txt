@@ -1,0 +1,23 @@
+
+TARGET=ws2txt
+
+SRCS=$(shell find . -type f -name '*.c' -execdir basename {} \;)
+OBJS=$(patsubst %,%,$(SRCS:.c=.o))
+CFLAGS = -Wall
+
+all: $(TARGET) 
+
+### My dependencies
+main.o: defs.h getopt.h
+getopt.o: defs.h getopt.h
+compat.o: defs.h compat.h
+
+%.o: %.c
+	gcc $(CFLAGS) -o $@ -c $< 
+
+$(TARGET): $(OBJS) 
+	gcc -o $(TARGET) $(OBJS) 
+
+clean:
+	rm -f $(OBJS) $(TARGET) 
+

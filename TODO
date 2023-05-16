@@ -1,0 +1,4 @@
+Pad out when paging, so last-but-one page is scrolled up.
+Handle WS dot commands?
+Make file output block based, avoiding the need to use C buffered I/O.
+
